@@ -21,6 +21,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngx-modal-dialog"
+    }
+  }
 }
