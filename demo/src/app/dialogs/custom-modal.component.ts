@@ -1,4 +1,4 @@
-import { IModalDialog, IModalDialogOptions } from 'ngx-modal-dialog';
+import { IModalDialog, IModalDialogOptions } from '@euro-ombudsman/ngx-modal-dialog';
 import { Component, ComponentRef } from '@angular/core';
 
 @Component({

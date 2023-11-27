@@ -42,7 +42,7 @@ You can further use action buttons to control modal dialog from external compone
 1. Include the `ngx-modal` module in your application at any place. The recommended way is to add `forRoot` initialization in the main app module.
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
-import { ModalDialogModule } from 'ngx-modal-dialog';
+import { ModalDialogModule } from '@euro-ombudsman/ngx-modal-dialog';
 
 @NgModule({
     imports: [
