@@ -4,7 +4,7 @@
     "noImplicitAny": true,
     "outDir": "./bundles/out-tsc",
     "module": "es2020",
-    "target": "es5",
+    "target": "ES2022",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "declaration": true,
@@ -18,7 +18,12 @@
       "jasmine",
       "node"
     ],
-    "lib": ["es7", "es2015", "dom"]
+    "lib": [
+      "es7",
+      "es2015",
+      "dom"
+    ],
+    "useDefineForClassFields": false
   },
   "files": [
     "./src/modal-dialog.module.ts",
@@ -34,7 +39,6 @@
   ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "enableIvy": false
+    "strictInjectionParameters": true
   }
 }

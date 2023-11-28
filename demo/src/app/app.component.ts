@@ -1,5 +1,5 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+import { ModalDialogService, SimpleModalComponent } from '@euro-ombudsman/ngx-modal-dialog';
 import { CustomModalComponent } from './dialogs/custom-modal.component';
 import { DynamicModalComponent } from './dialogs/dynamic-modal.component';
 

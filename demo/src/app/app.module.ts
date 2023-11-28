@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CustomModalComponent } from './dialogs/custom-modal.component';
-import { ModalDialogModule } from 'ngx-modal-dialog';
+import { ModalDialogModule } from '@euro-ombudsman/ngx-modal-dialog';
 import { DynamicModalComponent } from './dialogs/dynamic-modal.component';
 
 @NgModule({
@@ -12,7 +12,6 @@ import { DynamicModalComponent } from './dialogs/dynamic-modal.component';
     ModalDialogModule.forRoot()
   ],
   declarations: [AppComponent, CustomModalComponent, DynamicModalComponent],
-  entryComponents: [CustomModalComponent, DynamicModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
