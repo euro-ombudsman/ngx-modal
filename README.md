@@ -24,7 +24,7 @@ Simple demo can be found [here](https://greentube.github.io/ngx-modal/demo).
 ## Installation
 
 ```
-npm install --save ngx-modal-dialog
+npm install --save @euro-ombudsman/ngx-modal-dialog
 ```
 ## How it works
 Modal dialog uses `ComponentFactoryResolver` to inject the given child component to the dialog.
