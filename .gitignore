@@ -15,6 +15,7 @@ coverage/
 *.metadata.json
 *.d.ts
 *.js
+*.lock
 !config/*
 !karma.conf.js
 !protractor.conf.js
