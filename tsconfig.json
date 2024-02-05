@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "noImplicitAny": true,
     "outDir": "./bundles/out-tsc",
-    "module": "es2020",
+    "module": "es2022",
     "target": "ES2022",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -19,8 +19,7 @@
       "node"
     ],
     "lib": [
-      "es7",
-      "es2015",
+      "es2022",
       "dom"
     ],
     "useDefineForClassFields": false
