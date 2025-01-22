@@ -11,7 +11,8 @@ export interface ISimpleModalDataOptions {
   styles: [':host { display: block; }'],
   host: {
     '[innerHTML]': 'text'
-  }
+  },
+  standalone: false
 })
 export class SimpleModalComponent implements IModalDialog {
   text: string;
