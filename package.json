@@ -1,7 +1,7 @@
 {
   "name": "@euro-ombudsman/ngx-modal-dialog",
-  "version": "19.0.0",
-  "description": "Dynamic modal dialog for Angular 19",
+  "version": "20.0.0",
+  "description": "Dynamic modal dialog for Angular 20",
   "scripts": {
     "test": "karma start",
     "test-watch": "karma start --singleRun=false --autoWatch=true",
