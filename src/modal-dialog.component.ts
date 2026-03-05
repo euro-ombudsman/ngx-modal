@@ -60,29 +60,37 @@ import { from, Observable, Subject } from 'rxjs';
       }
   `],
   template: `
-    <div *ngIf="settings.overlayClass && showOverlay" [ngClass]="[settings.overlayClass, animateOverlayClass]"></div> 
+    @if (settings.overlayClass && showOverlay) {
+      <div [ngClass]="[settings.overlayClass, animateOverlayClass]"></div>
+    }
     <div [ngClass]="[settings.modalClass, animateModalClass]" #dialog>
       <div [ngClass]="settings.modalDialogClass">
         <div [ngClass]="[ showAlert ? settings.alertClass : '', settings.contentClass]">
           <div [ngClass]="settings.headerClass">
             <h4 [ngClass]="settings.headerTitleClass">{{title}}</h4>
-            <button (click)="close()" *ngIf="!actionButtons || !actionButtons.length" type="button"
-                    [title]="settings.closeButtonTitle"
-                    [ngClass]="settings.closeButtonClass">
-            </button>
+            @if (!actionButtons || !actionButtons.length) {
+              <button (click)="close()" type="button"
+                [title]="settings.closeButtonTitle"
+                [ngClass]="settings.closeButtonClass">
+              </button>
+            }
           </div>
           <div [ngClass]="settings.bodyClass">
             <i #modalDialogBody></i>
           </div>
-          <div [ngClass]="settings.footerClass" *ngIf="actionButtons && actionButtons.length">
-            <button *ngFor="let button of actionButtons" (click)="doAction(button.onAction)"
-                    [ngClass]="button.buttonClass || settings.buttonClass">{{button.text}}
-            </button>
-          </div>
+          @if (actionButtons && actionButtons.length) {
+            <div [ngClass]="settings.footerClass">
+              @for (button of actionButtons; track button) {
+                <button (click)="doAction(button.onAction)"
+                  [ngClass]="button.buttonClass || settings.buttonClass">{{button.text}}
+                </button>
+              }
+            </div>
+          }
         </div>
       </div>
     </div>
-  `,
+    `,
   standalone: false
 })
 export class ModalDialogComponent implements IModalDialog, OnDestroy, OnInit {

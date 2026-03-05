@@ -4,6 +4,7 @@
     "noImplicitAny": true,
     "outDir": "./bundles/out-tsc",
     "module": "es2022",
+    "esModuleInterop": true,
     "target": "ES2022",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -11,16 +12,11 @@
     "moduleResolution": "bundler",
     "noUnusedLocals": true,
     "stripInternal": true,
-    "allowSyntheticDefaultImports": true,
     "noUnusedParameters": false,
     "types": [
       "hammerjs",
       "jasmine",
       "node"
-    ],
-    "lib": [
-      "es2022",
-      "dom"
     ],
     "useDefineForClassFields": false
   },
