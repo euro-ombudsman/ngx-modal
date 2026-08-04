@@ -1,6 +1,5 @@
 ﻿import {
   Component,
-  ComponentFactoryResolver,
   ComponentRef,
   ElementRef,
   HostListener,
@@ -135,10 +134,8 @@ export class ModalDialogComponent implements IModalDialog, OnDestroy, OnInit {
   /**
    * CTOR
    * @param _element
-   * @param componentFactoryResolver
    */
-  constructor(protected _element: ElementRef,
-              private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(protected _element: ElementRef) {
   }
 
   @HostListener('click', ['$event'])
@@ -159,8 +156,7 @@ export class ModalDialogComponent implements IModalDialog, OnDestroy, OnInit {
 
     // inject component
     if (options.childComponent) {
-      let factory = this.componentFactoryResolver.resolveComponentFactory(options.childComponent);
-      let componentRef = this.dynamicComponentTarget.createComponent(factory) as ComponentRef<IModalDialog>;
+      const componentRef = this.dynamicComponentTarget.createComponent(options.childComponent) as ComponentRef<IModalDialog>;
       this._childInstance = componentRef.instance as IModalDialog;
 
       this._closeDialog$ = new Subject<void>();

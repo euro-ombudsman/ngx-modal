@@ -27,7 +27,7 @@ Simple demo can be found [here](https://greentube.github.io/ngx-modal/demo).
 npm install --save @euro-ombudsman/ngx-modal-dialog
 ```
 ## How it works
-Modal dialog uses `ComponentFactoryResolver` to inject the given child component to the dialog.
+Modal dialog uses `ViewContainerRef.createComponent()` to inject the given child component to the dialog.
 [ModalDialogService](#modaldialogservice) makes sure that only one instance of a modal dialog is opened at a time.
 With [IModalDialogOptions](#imodaldialogoptions) you can define which component will be rendered inside the dialog and configure it based on your needs.
 

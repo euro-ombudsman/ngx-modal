@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, ViewContainerRef, Inject, Injectable } from '@angular/core';
+import { Injectable, ViewContainerRef } from '@angular/core';
 import { ModalDialogComponent } from './modal-dialog.component';
 import { IModalDialogOptions } from './modal-dialog.interface';
 import { ModalDialogInstanceService } from './modal-dialog-instance.service';
@@ -7,11 +7,9 @@ import { ModalDialogInstanceService } from './modal-dialog-instance.service';
 export class ModalDialogService {
   /**
    * CTOR
-   * @param componentFactoryResolver
    * @param modalDialogInstanceService
    */
-  constructor(@Inject(ComponentFactoryResolver) private componentFactoryResolver: ComponentFactoryResolver,
-              @Inject(ModalDialogInstanceService) private modalDialogInstanceService: ModalDialogInstanceService) {
+  constructor(private modalDialogInstanceService: ModalDialogInstanceService) {
   }
 
   /**
@@ -24,8 +22,7 @@ export class ModalDialogService {
       this.modalDialogInstanceService.closeAnyExistingModalDialog();
     }
 
-    const factory = this.componentFactoryResolver.resolveComponentFactory(ModalDialogComponent);
-    const componentRef = target.createComponent(factory);
+    const componentRef = target.createComponent(ModalDialogComponent);
     componentRef.instance.dialogInit(componentRef, options);
 
     this.modalDialogInstanceService.saveExistingModalDialog(componentRef);
